@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-xs-6 col-md-6 ">
+        <h3>Welcome to Shape Calculator</h3>
+        <p>Shape Calculator is an interactive web application. To the right you will find the 3 step application. Follow the intstructions in each step . Clicking cancel will take you back to step 1. Enjoy!</p>
+    </div>
+    <div class="col-12 col-sm-12 col-xs-6 col-md-6 action-box">
+        <div class="d-flex justify-content-center">
+            <span class="step-txt">Step 1 - Select Your Shape</span>
+        </div>
+        <br>
+        
+        <div class="parent">
+            <div *ngIf="selectedValue=='rectangle'">
+                <div class="form-group" >
+                    <label  for="length">Length</label>
+                    <input type="number" [formControl]="getValueForm.controls['length']" 
+                    class="form-control" id="length" placeholder="Enter Lenth">
+                    <small class="text-danger text-small" *ngIf= "services.isFieldValid(getValueForm, 'length')">
+                        please enter valid length
+                    </small>
+                </div>
+                
+                <div class="form-group" >
+                    <label  for="height">Height</label>
+                    <input type="number" id="height" [formControl]="getValueForm.controls['height']" 
+                    class="form-control" placeholder="Enter Height">
+                    <small class="text-danger text-small" *ngIf= "services.isFieldValid(getValueForm, 'height')">
+                        please enter valid height
+                    </small>
+                </div>
+            </div>
+            <div *ngIf="selectedValue=='circle'">
+                <div class="form-group" >
+                    <label  for="radius">Radius</label>
+                    <input type="number" [formControl]="getValueForm.controls['radius']" 
+                    class="form-control" id="radius" placeholder="Enter Radius">
+                    <small class="text-danger text-small" *ngIf= "services.isFieldValid(getValueForm, 'radius')">
+                        please enter valid radius
+                    </small>
+                </div>
+            </div>
+            <div *ngIf="selectedValue=='square'">
+                <div class="form-group" >
+                    <label  for="side">Side</label>
+                    <input type="number" [formControl]="getValueForm.controls['side']" 
+                    class="form-control" id="side" placeholder="Enter side">
+                    <small class="text-danger text-small" *ngIf= "services.isFieldValid(getValueForm, 'side')">
+                        please enter valid side
+                    </small>
+                </div>
+            </div>
+            <div *ngIf="selectedValue=='eclipse'">
+                <div class="form-group" >
+                    <label  for="aradius">A Radius</label>
+                    <input type="number" [formControl]="getValueForm.controls['aradius']" 
+                    class="form-control" id="aradius" placeholder="Enter A radius">
+                    <small class="text-danger text-small" *ngIf= "services.isFieldValid(getValueForm, 'aradius')">
+                        please enter valid aradius
+                    </small>
+                </div>
+                <div class="form-group" >
+                    <label  for="bradius">B Radius</label>
+                    <input type="number" [formControl]="getValueForm.controls['bradius']" 
+                    class="form-control" id="bradius" placeholder="Enter B radius">
+                    <small class="text-danger text-small" *ngIf= "services.isFieldValid(getValueForm, 'bradius')">
+                        please enter valid bradius
+                    </small>
+                </div>
+            </div>
+            <br>
+            <button type="button" (click)="submit()" class="btn btn-success">Next</button>
+        </div>
+    </div>
+    <div class="col-6">
+        
+    </div>
+</div>
